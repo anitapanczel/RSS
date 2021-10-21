@@ -29,41 +29,38 @@
     box-sizing: border-box;
 }
 
-#timezone {
-    padding: 8px 0 28px;
-    color: #aaa;
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    font-size: 14px;
-    letter-spacing: .5em;
-}
-
-#flag {
-    padding: 8px 0 28px;
-    color: #aaa;
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    font-size: 14px;
-    letter-spacing: .5em;
-}
-
-#capital {
+#name {
     text-align: center;
     font-size: 40px;
     font-weight: 900;
 }
 
-#continents {
+.capital {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.timezone {
+    padding: 8px 0 28px;
+    color: #aaa;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    letter-spacing: .5em;
+}
+
+.flag {
+    padding: 8px 0 28px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.continents {
     text-align: center;
     padding: 10px;
     color: #fff;
     font-size: 12px;
     text-transform: uppercase;
     background-color: #bbb;
-}
-
-#name {
-    text-align: left;
-    font-size: 120px;
-    font-weight: 900;
 }
