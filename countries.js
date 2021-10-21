@@ -1,32 +1,48 @@
 function loadCountry() {
-    fetch("https://restcountries.com/v3.1/name/USA").then(r => r.json()).then(showCountry);
+    fetch("https://restcountries.com/v3.1/all").then(r => r.json()).then(showCountry);
 }
 
 function showCountry(country) {
 
-    debugger;
+    for (let j = 0; j < country.length; j++) {
 
-    console.log(country);
+        console.log(country[j].name.common);
 
-    const name = country[0].name.official;
-    document.getElementById("name").textContent = name;
+        let div = document.createElement("div");
+        const name = country[j].name.official;
+        div.textContent = name;
+        div.setAttribute('ID', 'name');
+        document.body.append(div);
 
-    const capital = country[0].capital;
-    document.getElementById("capital").innerHTML = capital;
+        div = document.createElement("div");
+        const capital = country[j].capital;
+        div.textContent = "Capital: " + capital;
+        div.setAttribute('class', 'capital');
+        document.body.append(div);
 
-    const flag = country[0].flags.png;
-    document.getElementById("flag").setAttribute('src', flag);
+        let img = document.createElement("img");
+        const flag = country[j].flags.png;
+        img.setAttribute('src', flag);
+        img.setAttribute('class', 'flag');
+        document.body.append(img);
 
-    for (let i = 0; i < country[0].timezones.length; i++) {
+        div = document.createElement("div");
+        div.textContent = "Timezone(s): ";
 
-        const tz = country[0].timezones[i];
-        document.getElementById("timezones").textContent += ' ' + tz;
+        for (let i = 0; i < country[j].timezones.length; i++) {
 
+            const tz = country[j].timezones[i];
+            div.textContent += ' ' + tz;
+            div.setAttribute('class', 'timezone');
+            document.body.append(div);
+        }
+
+        div = document.createElement("div");
+        const continents = country[1].continents[0];
+        div.textContent = "Continent: " + continents;
+        div.setAttribute('class', 'continents');
+        document.body.append(div);
     }
-
-    const continents = country[0].continents[0];
-    document.getElementById("continents").textContent = continents;
-
 }
 
 window.addEventListener("load", loadCountry);
